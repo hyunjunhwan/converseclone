@@ -10,19 +10,54 @@
 
 </head>
 <body>
+
+    <!-- header -->
+
     <div class="header">
         <div class="top">
-            <a class="triger-menu" href="#">
-                <span></span>
-                <span></span>
-                <span></span>
-            </a>
+            <a class="triger-menu" onclick="sideMenu();" href="#"></a>
             <a href="#"><img src="./img/indeximg/converselogo.png" alt=""></a>
             <a href="#"><img src="./img/indeximg/shopbasket.png" alt=""></a>
             <a href="#"><img src="./img/indeximg/search.png" alt=""></a>
         </div>
     </div>
+    <div class="nav" onclick="sideMenu();">
+        <div class="headtop">
+            <div class="homelogo">
+                <!-- <img src="./img/indeximg/logo.png" alt=""> -->
+            </div>
+            <div class="user">
+                <!-- <ul>
+                    <li><a href="#"><img src="./img/indeximg/user.png" alt=""></a></li>
+                    <li><a href="#"><img src="./img/indeximg/shopbasket.png" alt=""></a></li>
+                </ul> -->
+            </div>
+        </div>
+        <div class="submenu">
+            <ul>
+                <li><a href="#">신발</a></li>
+                <li><a href="#">의류</a></li>
+                <li><a href="#">아동</a></li>
+                <li><a href="#">런칭캘린더</a></li>
+                <li><a href="#">SALE</a></li>
+            </ul>
+        </div>
+    </div>
 
+    <script>
+        function sideMenu(){
+            let menu = document.querySelector(".triger-menu");
+            let side_menu = document.querySelector(".nav");
+            menu.classList.toggle('active');
+            side_menu.classList.toggle('active');
+        }
+    </script>
+
+    <!-- header end -->
+
+
+
+    <!-- content -->
 
     <div class="content">
         <div class="sessionbox">
@@ -49,21 +84,133 @@
                 </div>
                 <div class="arrival">
                     <div class="new01">
-                        <button type="button"><img src="./img/indeximg/heart.png" alt=""></button>
+                        <div class="likebox01">
+                            <button type="button"><img src="./img/indeximg/heart.png" alt=""></button>
+                            <p>NEW ARRIVAL</p>
+                        </div>
+                        <div class="img01">
+                            <img src="./img/indeximg/003.jpg" alt="">
+                        </div>
+                        <div class="likebox001">
+                            <span>척테일러 올스타 퓨쳐유틸리티</span><br>
+                            <span>79,000원</span>
+                        </div>
                     </div>
                     <div class="new02">
-
+                        <div class="likebox02">
+                            <button type="button"><img src="./img/indeximg/heart.png" alt=""></button>
+                            <p>NEW ARRIVAL</p>
+                        </div>
+                        <div class="img02">
+                            <img src="./img/indeximg/001.jpg" alt="">
+                        </div>
+                        <div class="likebox002">
+                            <span>척테일러 올스타 퓨쳐유틸리티</span><br>
+                            <span>79,000원</span>
+                        </div>
                     </div>
                 </div>
             </div>
-
+        </div>
+        <div class="bg">
+            <div class="bgtext">
+                <h2>FUTURE UTILITY</h2>
+                <h6>청사진에게 영감을 받은 그래픽으로 실용적인 
+                    엣지가 더해진 클래식척</h6>
+            </div>
+            <div class="bgimg">
+                <img src="./img/indeximg/05.jpg" alt="">
+            </div>
+            <a href="#"><p>구매하기</p></a>
+        </div>
+        <div class="explore">
+            <h2>Explore Converse</h2>
+            <div class="explore0">
+                <div class="explore01">
+                    <ul>
+                        <li><a href="#"><img src="./img/indeximg/arrowright.png" alt=""><p>여성 <br>전체보기</p></a></li>
+                        <li><a href="#"><img src="./img/indeximg/arrowright.png" alt=""><p>남성 <br>전체보기</p></a></li>
+                        <li><a href="#"><img src="./img/indeximg/arrowright.png" alt=""><p>아동 <br>전체보기</p></a></li>
+                    </ul>
+                </div>
+                <div class="explore02">
+                    <ul>
+                        <li><a href="#"><img src="./img/indeximg/arrowright.png" alt="">척 70</a></li>
+                        <li><a href="#"><img src="./img/indeximg/arrowright.png" alt="">클래식 척</a></li>
+                        <li><a href="#"><img src="./img/indeximg/arrowright.png" alt="">척테일러 올스타</a></li>
+                        <li><a href="#"><img src="./img/indeximg/arrowright.png" alt="">회원전용</a></li>
+                        <li><a href="#"><img src="./img/indeximg/arrowright.png" alt="">온라인 온리</a></li>
+                        <li><a href="#"><img src="./img/indeximg/arrowright.png" alt="">빅 사이즈</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="marketing">
+            <ul>
+                <li>
+                    <img src="./img/indeximg/deliver.png" alt="">
+                    <div class="txt01">무료배송</div>
+                    <div class="txt02">5만원 이상 구매 시<br>무료배송</div>
+                </li>
+                <li>
+                    <img src="./img/indeximg/takeback.png" alt="">
+                    <div class="txt01">교환/반품 서비스</div>
+                    <div class="txt02">사이즈를 잘못 선택하셨나요?<br>교환/반품 서비스에 대해<br>더 알아보세요.</div>
+                    <a href="#">자세히 보기</a>
+                </li>
+                <li>
+                    <img src="./img/indeximg/converse.png" alt="">
+                    <div class="txt01">회원 전용 혜택</div>
+                    <div class="txt02">신규가입축하쿠폰,드로우응모 등<br>지금 회원가입하시고<br>더욱 특별한 혜택을 누려보세요.</div>
+                    <a href="#">회원가입하기</a>
+                </li>
+                <li>
+                    <a href="#"><img src="./img/indeximg/fbook.png" alt=""></a>
+                    <a href="#"><img src="./img/indeximg/insta.png" alt=""></a>
+                    <div class="txt01">Follow Us</div>
+                    <div class="txt02">컨버스의 SNS 채널을 통해<br>신상품 정보 및 이벤트 등 새로운<br>소식을 확인하세요.</div>
+                </li>
+            </ul>
         </div>
     </div>
 
+        <!-- content end -->
 
+
+
+        <!-- footer -->
 
     <div class="footer">
-
+        <div class="familysites">
+            <div class="sites">
+                <p>FAMILY SITES</p>
+                <button><img src="./img/indeximg/plus.png" alt=""></button>
+            </div>
+        </div>
+        <div class="conkorea">
+            <div class="converkor">
+                <p><a href="#">(유)컨버스코리아</a></p>
+                <p>대표 주형준</p>
+                <p>개인정보책임 주형준</p>
+                <p>사업자등록번호 220-88074818</p>
+                <p>통신판매업 신고번호 제2016-서울강남-00478호</p>
+                <p>통신판매업자 신원정보 확인</p>
+                <p>주소 서울특별시 강남구 테헤란로 152(역삼동)강남파이낸스센터 32층</p>
+                <p>고객상담팀:080-987-0182</p>
+                <p>(상담시간 월-금 : AM 09:00 - PM 05:30 주말/공휴일 후무)</p>
+                <p>conversekorea@converse.co.kr(24시간 접수 가능)</p>
+                <p>개인정보처리방침 | 이용약관</p>
+                <p>2020 Converse Korea LLC All Rights Reserved</p>
+                <a href="#"><img src="./img/indeximg/fbook.png" alt=""></a>
+                <a href="#"><img src="./img/indeximg/insta.png" alt=""></a>
+            </div>
+        </div>
+        <div class="kor">
+            <span><img src="./img/indeximg/locale-kr.svg" alt="">  KR | 한국어</span>
+            <span>2020 Converse</span>
+        </div>
     </div>
+
+    <!-- footer end -->
 </body>
 </html>
