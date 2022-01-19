@@ -9,21 +9,145 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-    
+
     <!-- header -->
 
     <div class="header">
         <div class="top">
-            <a class="triger-menu" href="#">
-                <span></span>
-                <span></span>
-                <span></span>
-            </a>
-            <a href="#"><img src="./img/indeximg/converselogo.png" alt=""></a>
+            <a class="triger-menu" onclick="sideMenu();" href="#"></a>
+            <a href="./index.html"><img src="./img/indeximg/converselogo.png" alt=""></a>
+            <a href="#"><img src="./img/indeximg/user.png" alt=""></a>
             <a href="#"><img src="./img/indeximg/shopbasket.png" alt=""></a>
             <a href="#"><img src="./img/indeximg/search.png" alt=""></a>
         </div>
+        <div class="nav">
+            <div class="submenu">
+                <button class="shoesmenu"><p>신발</p></button>
+                <div class="panel">
+                    <a href="#"><p>전제보기</p></a>
+                    <a href="./bestseller_sub.html"><p>베스트셀러</p></a>
+                    <a href="#"><p>클래식 척</p></a>
+                    <a href="#"><p>척 70</p></a>
+                    <a href="#"><p>척테일러 올스타</p></a>
+                    <a href="#"><p>스케이트보딩</p></a>
+                    <a href="#"><p>잭퍼셀</p></a>
+                    <a href="#"><p>배스킷볼</p></a>
+                </div>
+                <button class="shoesmenu"><p>의류</p></button>
+                <div class="panel">
+                    <a href="#"><p>전제보기</p></a>
+                    <a href="#"><p>아우터</p></a>
+                    <a href="#"><p>상의</p></a>
+                    <a href="#"><p>하의</p></a>
+                    <a href="#"><p>용품</p></a>
+                </div>
+                <button class="shoesmenu"><p>아동</p></button>
+                <div class="panel">
+                    <a href="#"><p>전제보기</p></a>
+                    <a href="./child_sub.html"><p>유아(165mm이하)</p></a>
+                    <a href="./kid_sub.html"><p>어린이(215mm이하)</p></a>
+                </div>
+                <button class="shoesmenu"><p>런칭캘린더</p></button>
+                <div class="panel">
+                    <a href="./launching_sub.html"><p>캘린더</p></a>
+                </div>
+                <button class="shoesmenu"><p>SALE</p></button>
+                <div class="panel">
+                    <a href="#"><p>전체보기</p></a>
+                    <a href="./bestseller_sub.html"><p>로우탑</p></a>
+                    <a href="./bestseller_sub.html"><p>하이탑</p></a>
+                </div>
+            </div>
+            <div class="user">
+                <button class="usermenu"><p>마이페이지</p></button>
+                <button class="usermenu"><p>주문/배송조회</p></button>
+                <button class="usermenu"><p>고객지원센터</p></button>
+                <button class="usermenu"><p>로그인</p></button>
+            </div>
+            <div class="footer">
+                <div class="familysites">
+                    <div class="sites">
+                        <p>FAMILY SITES</p>
+                        <button><img src="./img/indeximg/plus.png" alt=""></button>
+                    </div>
+                </div>
+                <div class="conkorea">
+                    <div class="converkor">
+                        <p><a href="#">(유)컨버스코리아</a></p>
+                        <p>대표 주형준</p>
+                        <p>개인정보책임 주형준</p>
+                        <p>사업자등록번호 220-88074818</p>
+                        <p>통신판매업 신고번호 제2016-서울강남-00478호</p>
+                        <p>통신판매업자 신원정보 확인</p>
+                        <p>주소 서울특별시 강남구 테헤란로 152(역삼동)강남파이낸스센터 32층</p>
+                        <p>고객상담팀:080-987-0182</p>
+                        <p>(상담시간 월-금 : AM 09:00 - PM 05:30 주말/공휴일 후무)</p>
+                        <p>conversekorea@converse.co.kr(24시간 접수 가능)</p>
+                        <p>개인정보처리방침 | 이용약관</p>
+                        <p>2020 Converse Korea LLC All Rights Reserved</p>
+                        <a href="#"><img src="./img/indeximg/fbook.png" alt=""></a>
+                        <a href="#"><img src="./img/indeximg/insta.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="kor">
+                    <span><img src="./img/indeximg/locale-kr.svg" alt="">  KR | 한국어</span>
+                    <span>2020 Converse</span>
+                </div>
+            </div>
+        </div>
     </div>
+    
+
+    <script>
+        
+        function sideMenu(){
+            let menu = document.querySelector(".triger-menu");
+            let side_menu = document.querySelector(".nav");
+            menu.classList.toggle('active');
+            side_menu.classList.toggle('active');
+        };
+
+
+        var acc = document.getElementsByClassName('shoesmenu');
+        for(var i = 0; i < acc.length; i++){
+            acc[i].onclick = function(){
+                for(var j = 0; j<acc.lenght; j++){
+                    acc[j].classList.remove('active');
+                    if(this!==acc[j]){
+                        acc[j].nextElementSibling.style.maxHeight = null
+                    }
+                }
+                this.classList.toggle('active');
+                var panel = this.nextElementSibling;
+                if(panel.style.maxHeight){
+                    this.classList.remove('active');
+                    panel.style.maxHeight = null;
+                }else{
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            }
+        }
+
+        var acc2 = document.getElementsByClassName('usermenu');
+        for(var i = 0; i < acc2.length; i++){
+            acc2[i].onclick = function(){
+                for(var j = 0; j<acc2.lenght; j++){
+                    acc2[j].classList.remove('active');
+                    if(this!==acc2[j]){
+                        acc2[j].nextElementSibling.style.maxHeight = null
+                    }
+                }
+                this.classList.toggle('active');
+                var panel = this.nextElementSibling;
+                if(panel.style.maxHeight){
+                    this.classList.remove('active');
+                    panel.style.maxHeight = null;
+                }else{
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            }
+        }
+    </script>
 
     <!-- header end -->
 

@@ -3,9 +3,10 @@
 /* mobiie */
 @media (min-width:320px) and (max-width:767px){
     html{font-size: 10px;}
+
+    // header---------------------------------------------------
     .header{
         width: 360px;
-        height: 50px;
         background: #fff;
         position: fixed;
         z-index: 1;
@@ -41,43 +42,112 @@
             }
             a:nth-of-type(3){
                 margin-left: 10%;
-                width: 7%;
+                width: 5%;
                 img{width: 100%;}
             }
             a:nth-of-type(4){
+                width: 7%;
+                img{width: 100%;}
+            }
+            a:nth-of-type(5){
                 width: 5%;
                 img{width: 100%;}
             }
         }
-    }
-    .nav{width: 100%; height: 100%;
-        background: #fff;
-        transform: translateX(-100%);
-        position: fixed;
-        transition: .5s;
-        .headtop{
-            .homelogo{display: flex;
-                img{}
-            }
-            .user{
-                ul{display: flex;
-                    li:nth-of-type(1){
-                        a{
-                            img{}
+        .nav{width: 100%; height: 100%;
+            background: #fff;
+            transform: translateX(-100%);
+            position: fixed;
+            transition: .5s;
+            overflow: auto;
+            z-index: 10;
+            .submenu{
+                border-bottom: 1px solid #757575;
+                padding-bottom: 10%;
+                .shoesmenu{
+                    background: #fff;
+                    cursor: pointer;
+                    width: 100%;
+                    border: none;
+                    font-size: 3rem;
+                    font-weight: bold;
+                    transition: .5s;
+                    text-align: left;
+                    padding: 10px;
+                    p{float: left;}
+                }
+                .shoesmenu:nth-of-type(5){color: #f00;}
+                .shoesmenu.active{
+                    font-weight: bold;
+                    color: #000;
+                }
+                .shoesmenu::after{
+                    content: '';
+                    background-image: url('../img/indeximg/plus.png');
+                    background-size: 30px 30px;
+                    display: inline-block;
+                    width: 30px;
+                    height: 30px;
+                    position: relative;
+                    float: right;
+                    top: 7px;
+                }
+                .shoesmenu.active::after{
+                    background-image: url('../img/indeximg/minus.png');
+                    content: '';
+                }
+                .panel{
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: max-height 0.2s ease-out;
+                    a{
+                        p{color: #000; font-size: 2rem;
+                        padding: 2% 5%;
                         }
-                    }
-                    li:nth-of-type(2){
-                        a{
-                            img{}
-                        }
-                    }
-                    li:nth-of-type(3){
                     }
                 }
             }
+            .user{border-bottom: 1px solid #757575;
+                .usermenu{
+                    background: #fff;
+                    cursor: pointer;
+                    width: 100%;
+                    border: none;
+                    font-size: 1.4rem;
+                    font-weight: bold;
+                    transition: .5s;
+                    text-align: left;
+                    padding: 10px;
+                    p{float: left;}
+                }
+                .usermenu.active{
+                    font-weight: bold;
+                    color: #000;
+                }
+                .usermenu::after{
+                    content: '';
+                    background-image: url('../img/indeximg/plus.png');
+                    background-size: 20px 20px;
+                    display: inline-block;
+                    width: 20px;
+                    height: 20px;
+                    position: relative;
+                    float: right;
+                    top: 0;
+                }
+                .usermenu.active::after{
+                    background-image: url('../img/indeximg/minus.png');
+                    content: '';
+                }
+            }
         }
+        .nav.active{transform: translateX(0%);}
     }
-    .nav.active{transform: translateX(0%);}
+    
+    // header end-----------------------------------------------
+    
+
+    // content--------------------------------------------------
 
     .content{
         padding-top: 13%;
@@ -114,22 +184,20 @@
                 font-weight: bold;
                 }
             }
-            .corner{width: 100%;
-                .slide01{overflow: hidden;
-                    figure{
-                        display: flex;
-                        transition: .5s;
-                        a{
-                            flex-shrink: 0;
-                            width: 45%;
-                            img{}
-                            span{margin: 5%;color: #000;
-                                font-size: 1.5rem;
-                                display: block;
-                            }
-                        }
+            .slider{
+                width: 100%;
+                .slider-inner{
+                    width: 100%;
+                    overflow-x: scroll;
+                    white-space: nowrap;
+                    padding: 2%;
+                    .item{
+                        display: inline-flex;
+                        width:45%;
+                        p{color: #000;margin-left: 5%;font-size: 1.4rem;}
                     }
                 }
+                .slider-inner.active{}
             }
             .bannerbox{
                 .banner01{
@@ -146,23 +214,53 @@
                             align-items: center;
                             display: flex;
                             position: absolute;
-                            >button{
-                                background:none;
-                                width: 30px;
+                            .heartbtn{
+                                background-image: url("../img/indeximg/heart.png");
+                                background-size: cover;
+                                background-repeat: no-repeat;
+                                width: 20px;
+                                height: 20px;
                                 border: none;
-                                outline: 0;
-                                img{}
+                                cursor: pointer;
+                            }
+                            .heartbtn.active{
+                                background-image: url("../img/indeximg/redheart.png");
+                                background-size: cover;
+                                background-repeat: no-repeat;
+                                transition: .3s;
+                                width: 20px;
+                                height: 20px;
+                                border: none;
+                                cursor: pointer;
                             }
                             p{
                                 font-weight: bold;
                                 font-size: 1.3rem;
                             }
                         }
-                        .img01{}
+                        .img01{
+                            .shoeschange{
+                                background-image: url("../img/indeximg/003.jpg");
+                                background-size: cover;
+                                background-repeat:no-repeat;
+                                transition: .3s;
+                                width: 180px;
+                                height: 225px;
+                            }
+                            .shoeschange.active{
+                                background-image: url("../img/indeximg/004.jpg");
+                                background-size: cover;
+                                background-repeat:no-repeat;
+                                transition: .3s;
+                                width: 180px;
+                                height: 225px;
+                            }
+                        }
                         .likebox001{
                             position: absolute;
                             bottom:22px;
-                            span{font-size: 1.2rem;}
+                            
+                            span{font-size: 1.2rem;color: #000;}
                         }
                     }
                     .new02{width: 50%;
@@ -172,23 +270,52 @@
                             align-items: center;
                             display: flex;
                             position: absolute;
-                            >button{
-                                background: none;
-                                width: 30px;
+                            .heartbtn2{
+                                background-image: url("../img/indeximg/heart.png");
+                                background-size: cover;
+                                background-repeat: no-repeat;
+                                width: 20px;
+                                height: 20px;
                                 border: none;
-                                outline: 0;
-                                img{}
+                                cursor: pointer;
+                            }
+                            .heartbtn2.active{
+                                background-image: url("../img/indeximg/redheart.png");
+                                background-size: cover;
+                                background-repeat: no-repeat;
+                                transition: .3s;
+                                width: 20px;
+                                height: 20px;
+                                border: none;
+                                cursor: pointer;
                             }
                             p{
                                 font-weight: bold;
                                 font-size: 1.3rem;
                             }
                         }
-                        .img02{}
+                        .img02{
+                            .shoeschange2{
+                                background-image: url("../img/indeximg/001.jpg");
+                                background-size: cover;
+                                background-repeat:no-repeat;
+                                transition: .3s;
+                                width: 180px;
+                                height: 225px;
+                            }
+                            .shoeschange2.active{
+                                background-image: url("../img/indeximg/002.jpg");
+                                background-size: cover;
+                                background-repeat:no-repeat;
+                                transition: .3s;
+                                width: 180px;
+                                height: 225px;
+                            }
+                        }
                         .likebox002{
                             position: absolute;
-                            bottom: 22px;
-                            span{font-size: 1.2rem;}
+                            bottom:22px;
+                            span{font-size: 1.2rem;color: #000;}
                         }
                     }
                 }
@@ -196,9 +323,9 @@
         }
         .bg{position: relative;
             .bgtext{position: absolute; padding: 2%;
-                    text-align: right;
+                    text-align: right; right: 0;
                 h2{font-size: 3rem;font-weight: bold;}
-                h6{font-size: 1.1rem;}
+                h6{font-size: 1.09rem;}
             }
             .bgimg{}
             a{
@@ -218,15 +345,15 @@
         }
         .explore{
             .explore0{
-                border: 1px solid #000;
+                border: 1px solid #757575;
                 display: flex;
                 .explore01{width: 50%;
                     ul{
                         
                         li{
                             padding: 10%;
-                            border: 1px solid #000;
-                            padding-bottom: 30%;
+                            border: 1px solid #757575;
+                            padding-bottom: 26%;
                             a{
                                 display: flex;
                                 align-items: center;
@@ -259,7 +386,7 @@
                 flex-direction: row;
                 flex-wrap: wrap;
                 li{width: 50%;
-                    border: 1px solid gray;
+                    border: 1px solid #757575;
                     padding:10% 0;
                     .txt01{font-size: 1.6rem;
                         font-weight: bold;

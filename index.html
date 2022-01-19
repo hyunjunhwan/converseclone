@@ -16,40 +16,137 @@
     <div class="header">
         <div class="top">
             <a class="triger-menu" onclick="sideMenu();" href="#"></a>
-            <a href="#"><img src="./img/indeximg/converselogo.png" alt=""></a>
+            <a href="./index.html"><img src="./img/indeximg/converselogo.png" alt=""></a>
+            <a href="#"><img src="./img/indeximg/user.png" alt=""></a>
             <a href="#"><img src="./img/indeximg/shopbasket.png" alt=""></a>
             <a href="#"><img src="./img/indeximg/search.png" alt=""></a>
         </div>
-    </div>
-    <div class="nav" onclick="sideMenu();">
-        <div class="headtop">
-            <div class="homelogo">
-                <!-- <img src="./img/indeximg/logo.png" alt=""> -->
+        <div class="nav">
+            <div class="submenu">
+                <button class="shoesmenu"><p>신발</p></button>
+                <div class="panel">
+                    <a href="#"><p>전제보기</p></a>
+                    <a href="./bestseller_sub.html"><p>베스트셀러</p></a>
+                    <a href="#"><p>클래식 척</p></a>
+                    <a href="#"><p>척 70</p></a>
+                    <a href="#"><p>척테일러 올스타</p></a>
+                    <a href="#"><p>스케이트보딩</p></a>
+                    <a href="#"><p>잭퍼셀</p></a>
+                    <a href="#"><p>배스킷볼</p></a>
+                </div>
+                <button class="shoesmenu"><p>의류</p></button>
+                <div class="panel">
+                    <a href="#"><p>전제보기</p></a>
+                    <a href="#"><p>아우터</p></a>
+                    <a href="#"><p>상의</p></a>
+                    <a href="#"><p>하의</p></a>
+                    <a href="#"><p>용품</p></a>
+                </div>
+                <button class="shoesmenu"><p>아동</p></button>
+                <div class="panel">
+                    <a href="#"><p>전제보기</p></a>
+                    <a href="./child_sub.html"><p>유아(165mm이하)</p></a>
+                    <a href="./kid_sub.html"><p>어린이(215mm이하)</p></a>
+                </div>
+                <button class="shoesmenu"><p>런칭캘린더</p></button>
+                <div class="panel">
+                    <a href="./launching_sub.html"><p>캘린더</p></a>
+                </div>
+                <button class="shoesmenu"><p>SALE</p></button>
+                <div class="panel">
+                    <a href="#"><p>전체보기</p></a>
+                    <a href="./bestseller_sub.html"><p>로우탑</p></a>
+                    <a href="./bestseller_sub.html"><p>하이탑</p></a>
+                </div>
             </div>
             <div class="user">
-                <!-- <ul>
-                    <li><a href="#"><img src="./img/indeximg/user.png" alt=""></a></li>
-                    <li><a href="#"><img src="./img/indeximg/shopbasket.png" alt=""></a></li>
-                </ul> -->
+                <button class="usermenu"><p>마이페이지</p></button>
+                <button class="usermenu"><p>주문/배송조회</p></button>
+                <button class="usermenu"><p>고객지원센터</p></button>
+                <button class="usermenu"><p>로그인</p></button>
+            </div>
+            <div class="footer">
+                <div class="familysites">
+                    <div class="sites">
+                        <p>FAMILY SITES</p>
+                        <button><img src="./img/indeximg/plus.png" alt=""></button>
+                    </div>
+                </div>
+                <div class="conkorea">
+                    <div class="converkor">
+                        <p><a href="#">(유)컨버스코리아</a></p>
+                        <p>대표 주형준</p>
+                        <p>개인정보책임 주형준</p>
+                        <p>사업자등록번호 220-88074818</p>
+                        <p>통신판매업 신고번호 제2016-서울강남-00478호</p>
+                        <p>통신판매업자 신원정보 확인</p>
+                        <p>주소 서울특별시 강남구 테헤란로 152(역삼동)강남파이낸스센터 32층</p>
+                        <p>고객상담팀:080-987-0182</p>
+                        <p>(상담시간 월-금 : AM 09:00 - PM 05:30 주말/공휴일 후무)</p>
+                        <p>conversekorea@converse.co.kr(24시간 접수 가능)</p>
+                        <p>개인정보처리방침 | 이용약관</p>
+                        <p>2020 Converse Korea LLC All Rights Reserved</p>
+                        <a href="#"><img src="./img/indeximg/fbook.png" alt=""></a>
+                        <a href="#"><img src="./img/indeximg/insta.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="kor">
+                    <span><img src="./img/indeximg/locale-kr.svg" alt="">  KR | 한국어</span>
+                    <span>2020 Converse</span>
+                </div>
             </div>
         </div>
-        <div class="submenu">
-            <ul>
-                <li><a href="#">신발</a></li>
-                <li><a href="#">의류</a></li>
-                <li><a href="#">아동</a></li>
-                <li><a href="#">런칭캘린더</a></li>
-                <li><a href="#">SALE</a></li>
-            </ul>
-        </div>
     </div>
+    
 
     <script>
+        
         function sideMenu(){
             let menu = document.querySelector(".triger-menu");
             let side_menu = document.querySelector(".nav");
             menu.classList.toggle('active');
             side_menu.classList.toggle('active');
+        };
+
+
+        var acc = document.getElementsByClassName('shoesmenu');
+        for(var i = 0; i < acc.length; i++){
+            acc[i].onclick = function(){
+                for(var j = 0; j<acc.lenght; j++){
+                    acc[j].classList.remove('active');
+                    if(this!==acc[j]){
+                        acc[j].nextElementSibling.style.maxHeight = null
+                    }
+                }
+                this.classList.toggle('active');
+                var panel = this.nextElementSibling;
+                if(panel.style.maxHeight){
+                    this.classList.remove('active');
+                    panel.style.maxHeight = null;
+                }else{
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            }
+        }
+
+        var acc2 = document.getElementsByClassName('usermenu');
+        for(var i = 0; i < acc2.length; i++){
+            acc2[i].onclick = function(){
+                for(var j = 0; j<acc2.lenght; j++){
+                    acc2[j].classList.remove('active');
+                    if(this!==acc2[j]){
+                        acc2[j].nextElementSibling.style.maxHeight = null
+                    }
+                }
+                this.classList.toggle('active');
+                var panel = this.nextElementSibling;
+                if(panel.style.maxHeight){
+                    this.classList.remove('active');
+                    panel.style.maxHeight = null;
+                }else{
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            }
         }
     </script>
 
@@ -63,19 +160,17 @@
         <div class="sessionbox">
             <a href="#"><img src="./img/indeximg/main1.jpg" alt=""></a>
             <a href="#"><img src="./img/indeximg/main2.jpg" alt=""></a>
-            <a href="#"><p>더 알아보기</p></a>
+            <a href="launching_sub.html"><p>더 알아보기</p></a>
         </div>
         <div class="corner_title">
             <h2>Shop By Style</h2>
             <a href="#"><p>신상품 보러가기</p></a>
-            <div class="corner">
-                <div class="slide01">
-                    <figure>
-                        <a href="#"><img src="./img/indeximg/hightop.jpg" alt=""><span>하이 탑</span></a>
-                        <a href="#"><img src="./img/indeximg/lowtop.jpg" alt=""><span>로우 탑</span></a>
-                        <a href="#"><img src="./img/indeximg/platform.jpg" alt=""><span>플랫폼</span></a>
-                        <a href="#"><img src="./img/indeximg/apparel.jpg" alt=""><span>어패럴</span></a>
-                    </figure>
+            <div class="slider">
+                <div class="slider-inner">
+                    <div class="item"><a href="./bestseller_sub.html"><img src="./img/indeximg/hightop.jpg" alt=""><p>하이 탑</p></a></div>
+                    <div class="item"><a href="./bestseller_sub.html"><img src="./img/indeximg/lowtop.jpg" alt=""><p>로우 탑</p></a></div>
+                    <div class="item"><a href="#"><img src="./img/indeximg/platform.jpg" alt=""><p>플랫폼</p></a></div>
+                    <div class="item"><a href="#"><img src="./img/indeximg/apparel.jpg" alt=""><p>어패럴</p></a></div>
                 </div>
             </div>
             <div class="bannerbox">
@@ -85,33 +180,47 @@
                 <div class="arrival">
                     <div class="new01">
                         <div class="likebox01">
-                            <button type="button"><img src="./img/indeximg/heart.png" alt=""></button>
+                            <button class="heartbtn" onclick="likeheart();"></button>
                             <p>NEW ARRIVAL</p>
                         </div>
                         <div class="img01">
-                            <img src="./img/indeximg/003.jpg" alt="">
+                            <div class="shoeschange" onclick="likeheart();"></div>
                         </div>
                         <div class="likebox001">
-                            <span>척테일러 올스타 퓨쳐유틸리티</span><br>
-                            <span>79,000원</span>
+                            <a href="./bestseller_sub.html"><span>척테일러 올스타 퓨쳐유틸리티</span><br>
+                            <span>79,000원</span></a>
                         </div>
                     </div>
                     <div class="new02">
                         <div class="likebox02">
-                            <button type="button"><img src="./img/indeximg/heart.png" alt=""></button>
+                            <button class="heartbtn2" onclick="likeheart2();"></button>
                             <p>NEW ARRIVAL</p>
                         </div>
                         <div class="img02">
-                            <img src="./img/indeximg/001.jpg" alt="">
+                            <div class="shoeschange2" onclick="likeheart2();"></div>
                         </div>
                         <div class="likebox002">
-                            <span>척테일러 올스타 퓨쳐유틸리티</span><br>
-                            <span>79,000원</span>
+                            <a href="./bestseller_sub.html"><span>척테일러 올스타 퓨쳐유틸리티</span><br>
+                            <span>79,000원</span></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <script>
+            function likeheart(){
+                let like =document.querySelector('.heartbtn');
+                let shoes = document.querySelector('.shoeschange')
+                like.classList.toggle('active')
+                shoes.classList.toggle('active')
+            }
+            function likeheart2(){
+                let like =document.querySelector('.heartbtn2');
+                let shoes = document.querySelector('.shoeschange2')
+                like.classList.toggle('active')
+                shoes.classList.toggle('active')
+            }
+        </script>
         <div class="bg">
             <div class="bgtext">
                 <h2>FUTURE UTILITY</h2>
@@ -121,7 +230,7 @@
             <div class="bgimg">
                 <img src="./img/indeximg/05.jpg" alt="">
             </div>
-            <a href="#"><p>구매하기</p></a>
+            <a href="./bestseller_sub.html"><p>구매하기</p></a>
         </div>
         <div class="explore">
             <h2>Explore Converse</h2>
@@ -174,6 +283,40 @@
         </div>
     </div>
 
+
+
+    <script>
+        const slider = document.querySelector('.content .corner_title .slider .slider-inner');
+        let isMouseDown = false;
+        let startX, scrollLeft;
+        
+        slider.addEventListener('mousedown', (e) => {
+            isMouseDown = true;
+            slider.classList.add('active');
+        
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+    
+        slider.addEventListener('mouseleave', () => {
+            isMouseDown = false;
+            slider.classList.remove('active');
+        });
+    
+        slider.addEventListener('mouseup', () => {
+            isMouseDown = false;
+            slider.classList.remove('active');
+        });
+    
+        slider.addEventListener('mousemove', (e) => {
+            if (!isMouseDown) return;
+        
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 1;
+            slider.scrollLeft = scrollLeft - walk;
+        });
+    </script>
         <!-- content end -->
 
 
