@@ -41,7 +41,7 @@ table {
     font-size: 10px;
   }
   .header {
-    width: 360px;
+    width: 100%;
     background: #fff;
     position: fixed;
     z-index: 1;
