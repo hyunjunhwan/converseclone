@@ -167,10 +167,10 @@
             <a href="#"><p>신상품 보러가기</p></a>
             <div class="slider">
                 <div class="slider-inner">
-                    <div class="item"><a href="./bestseller_sub.html"><img src="./img/indeximg/hightop.jpg" alt=""><p>하이 탑</p></a></div>
-                    <div class="item"><a href="./bestseller_sub.html"><img src="./img/indeximg/lowtop.jpg" alt=""><p>로우 탑</p></a></div>
-                    <div class="item"><a href="#"><img src="./img/indeximg/platform.jpg" alt=""><p>플랫폼</p></a></div>
-                    <div class="item"><a href="#"><img src="./img/indeximg/apparel.jpg" alt=""><p>어패럴</p></a></div>
+                    <div class="item"><img src="./img/indeximg/hightop.jpg" alt=""></div>
+                    <div class="item"><img src="./img/indeximg/lowtop.jpg" alt=""></div>
+                    <div class="item"><img src="./img/indeximg/platform.jpg" alt=""></div>
+                    <div class="item"><img src="./img/indeximg/apparel.jpg" alt=""></div>
                 </div>
             </div>
             <div class="bannerbox">
@@ -292,20 +292,13 @@
         
         slider.addEventListener('mousedown', (e) => {
             isMouseDown = true;
-            slider.classList.add('active');
         
             startX = e.pageX - slider.offsetLeft;
             scrollLeft = slider.scrollLeft;
         });
-    
-        slider.addEventListener('mouseleave', () => {
-            isMouseDown = false;
-            slider.classList.remove('active');
-        });
-    
+
         slider.addEventListener('mouseup', () => {
             isMouseDown = false;
-            slider.classList.remove('active');
         });
     
         slider.addEventListener('mousemove', (e) => {

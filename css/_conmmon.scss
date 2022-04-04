@@ -3,6 +3,7 @@
 *{
     box-sizing: border-box;
     font-family: 'Geograph-Light', 'Noto Sans KR', sans-serif;
+    ::-webkit-scrollbar { display: none; }
 }
 html{font-size: 10px;}
 body{margin:0;}
